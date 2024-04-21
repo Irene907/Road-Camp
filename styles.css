@@ -18,6 +18,7 @@ h2 {
     letter-spacing: 0.2rem;
     font-weight: bold;
     text-align: center;
+
 }
 
 h3 {
@@ -394,4 +395,55 @@ header nav a {
     color: var(--small);
     font-size: 1.2rem;
     line-height: 2.4rem;
+}
+
+/* 最新消息 */
+.section.new h2 {
+    padding-top: 6rem;
+    font-size: 5rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+.section.new .arrow {
+    text-align: center;
+}
+
+.section.new .row {
+    margin-top: 5rem;
+    padding: 0 11rem;
+}
+
+.section.new .row .card {
+    margin-bottom: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.section.new .row .card .pic img {
+    width: 100%;
+    vertical-align: top;
+}
+
+.section.new .row .card .txt h3 {
+    font-size: 1.5rem;
+    padding: 2rem 0;
+    font-weight: bold;
+}
+
+.section.new .row .card .txt p {
+    font-size: 1.2rem;
+    line-height: 2.4rem;
+    color: var(--small);
+    flex-grow: 1;
+}
+
+.section.new .row .card .date p {
+    font-size: 1rem;
+    line-height: 2rem;
+    color: var(--small);
+    margin: 1rem 0;
 }
