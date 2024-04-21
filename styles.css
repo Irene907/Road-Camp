@@ -13,10 +13,11 @@ h1 {
 }
 
 h2 {
-    font-size: 3rem;
+    font-size: 5rem;
     margin: 1.5rem 0;
     letter-spacing: 0.2rem;
-    font-weight: bold;
+    padding-top: 6rem;
+    font-weight: normal;
     text-align: center;
 
 }
@@ -446,4 +447,10 @@ header nav a {
     line-height: 2rem;
     color: var(--small);
     margin: 1rem 0;
+}
+
+/* 房型介紹 */
+
+.section.introroom .arrow {
+    text-align: center;
 }
