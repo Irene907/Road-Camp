@@ -1,0 +1,397 @@
+html {
+    font-size: 10px;
+    font-family: "Noto Sans TC", "Roboto";
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+    margin: 1.5rem 0;
+    letter-spacing: 0.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+h3 {
+    font-size: 2.5rem;
+    letter-spacing: 0.2rem;
+}
+
+h4 {
+    font-size: 1.55rem;
+}
+
+h5 {
+    font-size: 1.5rem;
+}
+
+h6 {
+    font-size: 1.4rem;
+}
+
+.section {
+    padding: 8rem 0;
+    background-color: #f3f3f3;
+}
+
+:root {
+    --big: #222222;
+    --mid: #ffffff;
+    --small: #797979;
+    --hover: #91AAA4;
+}
+
+button {
+    color: #000000;
+    font-size: 1.2rem;
+    line-height: 42px;
+    height: 42px;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-color: var(--small);
+    border-width: 1px;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    /* background-color: #f2f2f2; */
+    padding-left: 30px;
+    padding-right: 30px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--hover);
+    color: var(--mid);
+}
+
+.arrow img {
+    object-fit: cover;
+    margin: 1.5rem;
+}
+
+/* header*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    padding: 1rem;
+}
+
+.header-logo img {
+    width: 5rem;
+    vertical-align: top;
+}
+
+header nav a {
+    text-decoration: none;
+    text-align: center;
+    padding: 0.6rem 1rem;
+    color: var(--mid);
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.section-header .nav-function i {
+    text-align: center;
+    font-size: 1.6rem;
+    padding: 6px;
+    color: var(--mid);
+}
+
+.nav-function a:hover {
+    color: var(--hover);
+}
+
+@media (min-width: 768px) {
+    nav .nav-switch {
+        display: none;
+    }
+}
+
+/* banner*/
+.section-banner {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.section-banner video {
+    width: 100%;
+    aspect-ratio: 16/9;
+    position: relative;
+    z-index: -1;
+}
+
+/* about us */
+.section.aboutus .container {
+    display: flex;
+}
+
+.aboutus-left {
+    display: flex;
+    margin-right: 3rem;
+}
+
+.aboutus-left-pic img {
+    object-fit: cover;
+    width: 25rem;
+    height: 40rem;
+    vertical-align: top;
+    margin: 0 1.5rem;
+}
+
+.aboutus-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.aboutus-right-txt {
+    margin: 1.5rem 0;
+}
+
+.aboutus-right-txt p {
+    font-size: 1.2rem;
+    line-height: 2.4rem;
+    color: var(--small);
+    letter-spacing: 0.2rem;
+}
+
+.aboutus.button {
+    margin-top: 5rem;
+}
+
+/* room */
+.section.room .container {
+    text-align: center;
+}
+
+.section.room .container p {
+    padding-bottom: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 2.4rem;
+    color: var(--small);
+    letter-spacing: 0.3rem;
+}
+
+.section.room .room-list {
+    display: flex;
+}
+
+.section.room .room-card {
+    overflow: hidden;
+}
+
+.room-card .room-pic {
+    overflow: hidden;
+}
+
+.section.room .room-pic img {
+    object-fit: cover;
+    width: 50rem;
+    height: 45rem;
+    transition: all 1s ease-out;
+}
+
+/* .section.room .room-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    transition: opacity 0.3s ease;
+} */
+
+.section.room .room-pic:hover img {
+    transform: scale(1.1);
+}
+
+.section.room .room-pic:hover .room-overlay {
+    opacity: 0;
+}
+
+.room-card .room-txt h3 {
+    letter-spacing: 0.3rem;
+}
+
+.section.room .room-pic:hover .room-txt {
+    transform: translateY(0);
+}
+
+/* facility */
+.section.facility .arrow {
+    display: flex;
+    justify-content: center;
+}
+
+.fac-circles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.fac-circles .circle {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    /* flex: 0 1 300px; */
+}
+
+.fac-circles .circle p {
+    margin-top: 1rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.3rem;
+}
+
+.fac-circles .circle img {
+    border-radius: 50%;
+    transition: all 0.1s ease-in;
+    padding: 0.3rem;
+}
+
+.fac-circles .circle img:hover {
+    border: 3px solid var(--hover);
+}
+
+
+/* comment */
+.section.comment .arrow {
+    display: flex;
+    justify-content: center;
+}
+
+.comment-list {
+    display: flex;
+    overflow: hidden;
+}
+
+/* footer */
+.section-footer {
+    background-color: var(--big);
+}
+
+.section-footer .container {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 5rem;
+    vertical-align: top;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo p {
+    color: var(--mid);
+    margin: 1.5rem 0;
+    letter-spacing: 0.2rem;
+    font-size: 1.4rem;
+}
+
+.footer-fun,
+.footer-follow {
+    padding: 1rem;
+}
+
+.footer-fun,
+.footer-follow i {
+    color: var(--mid);
+}
+
+.footer-follow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-follow p,
+.footer-mail p {
+    margin-right: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.footer-follow i {
+    font-size: 1.4rem;
+    padding: 0.5rem
+}
+
+/* about us內頁 */
+.abus h2 {
+    padding-top: 6rem;
+    font-size: 5rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+.abus .arrow {
+    text-align: center;
+}
+
+.abus-uptxt p {
+    color: var(--small);
+    font-size: 1.2rem;
+    line-height: 2.4rem;
+    text-align: center;
+    margin: 5rem 0;
+}
+
+.abus-pic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.abus-pic img {
+    object-fit: cover;
+    width: 100rem;
+    height: 50rem;
+}
+
+.abus-downtxt {
+    padding: 6.4rem 10rem 0 11rem;
+    display: flex;
+}
+
+.abus-downtxt p {
+    padding: 0 1.5rem;
+    color: var(--small);
+    font-size: 1.2rem;
+    line-height: 2.4rem;
+}
