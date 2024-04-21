@@ -307,7 +307,7 @@ header nav a {
 }
 
 .section-footer .container {
-    padding: 1rem;
+    padding: 0.5rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -333,7 +333,7 @@ header nav a {
 
 .footer-fun,
 .footer-follow {
-    padding: 1rem;
+    /* padding: 1rem; */
 }
 
 .footer-fun,
@@ -344,28 +344,21 @@ header nav a {
 .footer-follow {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .footer-follow p,
 .footer-mail p {
     margin-right: 0.5rem;
     font-size: 1.4rem;
+    padding: 0.5rem 0;
 }
 
 .footer-follow i {
-    font-size: 1.4rem;
+    font-size: 2rem;
     padding: 0.5rem
 }
 
 /* about us內頁 */
-.abus h2 {
-    padding-top: 6rem;
-    font-size: 5rem;
-    font-weight: normal;
-    text-align: center;
-}
-
 .abus .arrow {
     text-align: center;
 }
@@ -515,4 +508,78 @@ header nav a {
 .introroom-txt .booknow {
     /* flex-grow: 1 */
     margin-top: 3rem;
+}
+
+/* 聯絡我們 */
+.section.contact .container {
+    text-align: center;
+}
+
+.section.map .container .map-icon {
+    margin-top: -8rem;
+    padding: 0 15rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.section.map .container .map-icon i {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+}
+
+.section.map .container .map-icon p {
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+}
+
+.section.map .container .map-icon .phone,
+.section.map .container .map-icon .mail,
+.section.map .container .map-icon .loca {
+    display: flex;
+    flex: 1 0 300px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section.map .container .googlemap {
+    text-align: center;
+    margin-top: 8rem;
+}
+
+.section.map .container .googlemap iframe {
+    margin: auto;
+}
+
+/* 表單 */
+.section.contact form input,
+.section.contact form textarea {
+    background-color: rgba(242, 242, 242, 1);
+    border-color: #c7c7c7;
+    border-width: 1px;
+    border-style: solid;
+    transform: translateZ(0);
+    border-radius: 0px;
+    color: #000000;
+    font-size: 1.1rem;
+    line-height: 20px;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
+.section.contact form input:nth-child(1),
+.section.contact form input:nth-child(2) {
+    width: 35rem;
+    height: 4rem;
+}
+
+.section.contact form .line2 input,
+.section.contact form textarea {
+    resize: none;
+    width: 70rem;
+}
+
+.section.contact form textarea {
+    height: 14rem;
 }
