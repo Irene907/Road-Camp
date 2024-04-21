@@ -13,11 +13,11 @@ h1 {
 }
 
 h2 {
-    font-size: 5rem;
+    font-size: 4rem;
     margin: 1.5rem 0;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.5rem;
     padding-top: 6rem;
-    font-weight: normal;
+    font-weight: bold;
     text-align: center;
 
 }
@@ -292,6 +292,10 @@ header nav a {
     justify-content: center;
 }
 
+.section.comment .container {
+    padding: 0 5rem;
+}
+
 .comment-list {
     display: flex;
     overflow: hidden;
@@ -303,7 +307,7 @@ header nav a {
 }
 
 .section-footer .container {
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -401,8 +405,6 @@ header nav a {
 /* 最新消息 */
 .section.new h2 {
     padding-top: 6rem;
-    font-size: 5rem;
-    font-weight: normal;
     text-align: center;
 }
 
@@ -450,7 +452,67 @@ header nav a {
 }
 
 /* 房型介紹 */
-
 .section.introroom .arrow {
     text-align: center;
+}
+
+/* 露營車 */
+.section.roomlist {
+    padding: 0 10rem;
+}
+
+.section.roomlist .room-item {
+    display: flex;
+    padding: 5rem 0;
+}
+
+.room-item .introroom-pic {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    overflow: hidden;
+}
+
+.room-item .introroom-txt {
+    width: 50%;
+    padding: 1rem 2rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.introroom-txt .title h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+}
+
+.introroom-txt .title p,
+.introroom-txt .price p,
+.introroom-txt .price p,
+.introroom-txt .time p,
+.introroom-txt .fac {
+    font-size: 1.2rem;
+    line-height: 2.4rem;
+    padding: 1rem 0;
+    letter-spacing: 0.2rem;
+}
+
+.introroom-txt .price {
+    text-align: center;
+}
+
+.introroom-txt .price span {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.introroom-txt .fac i {
+    font-size: 2rem;
+    padding: 0 1rem;
+}
+
+.introroom-txt .booknow {
+    /* flex-grow: 1 */
+    margin-top: 3rem;
 }
