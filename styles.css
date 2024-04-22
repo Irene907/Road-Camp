@@ -3,6 +3,12 @@ html {
     font-family: "Noto Sans TC", "Roboto";
 }
 
+@media (max-width:768px) {
+    html {
+        font-size: 8px;
+    }
+}
+
 .container {
     max-width: 1200px;
     margin: auto;
@@ -81,10 +87,15 @@ button:hover {
     margin: 1.5rem;
 }
 
+img {
+    max-width: 100%;
+}
+
 /* header-test */
 header {
     position: fixed;
     width: 100%;
+    z-index: 1;
 }
 
 .main-header .logo img {
@@ -115,17 +126,20 @@ header {
 .main-header .hb span {
     width: 80%;
     height: 3px;
-    background-color: var(--small);
+    background-color: var(--mid);
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width:768px) {
     .main-header .main-nav {
         position: absolute;
         top: 100%;
         right: 0;
-        width: 30%;
+        width: 100%;
     }
 
+    .main-header .main-nav a {
+        text-align: center;
+    }
 }
 
 @media screen and (min-width:768px) {
@@ -148,7 +162,7 @@ header {
     .main-header .main-nav a {
         display: block;
         background-color: transparent;
-        color: var(--small);
+        color: var(--mid);
     }
 }
 
@@ -187,9 +201,23 @@ header {
     z-index: -1;
 }
 
+@media (max-width: 768px) {
+    .section-banner video {
+        width: auto;
+    }
+}
+
 /* about us */
 .section.aboutus .container {
     display: flex;
+}
+
+@media (max-width:768px) {
+    .section.aboutus .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
 .aboutus-left {
@@ -201,6 +229,7 @@ header {
     vertical-align: top;
     margin: 0 1.5rem;
 }
+
 
 .aboutus-right {
     text-align: center;
@@ -341,6 +370,7 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .footer-logo img {
@@ -421,6 +451,14 @@ header {
     line-height: 2.4rem;
 }
 
+@media (max-width:768px) {
+    .abus-downtxt {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+}
+
 /* 最新消息 */
 .section.new h2 {
     padding-top: 6rem;
@@ -485,6 +523,15 @@ header {
     padding: 5rem 0;
 }
 
+@media (max-width:768px) {
+    .section.roomlist .room-item {
+        padding: 5rem 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 .room-item .introroom-pic {
     display: flex;
     justify-content: center;
@@ -497,6 +544,14 @@ header {
     padding: 1rem 2rem 2rem 2rem;
     display: flex;
     flex-direction: column;
+}
+
+@media (max-width:768px) {
+
+    .room-item .introroom-pic,
+    .room-item .introroom-txt {
+        width: 100%;
+    }
 }
 
 .introroom-txt .title {
@@ -585,6 +640,25 @@ header {
     align-items: center;
 }
 
+@media (max-width:768px) {
+
+    .section.map .container .map-icon .phone,
+    .section.map .container .map-icon .mail,
+    .section.map .container .map-icon .loca {
+        display: flex;
+        flex: 1 0 100 px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section.map .container .googlemap iframe {
+        margin: auto;
+        width: 5rem;
+        height: 5rem;
+        border: 0;
+    }
+}
+
 .section.map .container .googlemap {
     text-align: center;
     margin-top: 8rem;
@@ -592,6 +666,9 @@ header {
 
 .section.map .container .googlemap iframe {
     margin: auto;
+    width: 90rem;
+    height: 35rem;
+    border: 0;
 }
 
 /* 表單 */
