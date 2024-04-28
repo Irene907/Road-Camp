@@ -197,7 +197,7 @@ header {
     .main-header .main-nav a {
         display: block;
         background-color: transparent;
-        color: var(--mid);
+        color: var(--big);
     }
 }
 
@@ -585,6 +585,11 @@ header {
     line-height: 2.4rem;
 }
 
+.abus-downtxt p::first-letter {
+    font-size: 2rem;
+    color: var(--big);
+}
+
 @media (max-width:768px) {
     .abus-downtxt {
         display: flex;
@@ -839,3 +844,159 @@ header {
 }
 
 /* 預約訂房 */
+
+.section.booknow .arrow {
+    text-align: center;
+}
+
+.booknow-wrap {
+    display: flex;
+}
+
+.booknow-main .tab_box .tab_btn {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    color: #797979;
+    background: none;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.booknow-main .tab_box .tab_btn:hover {
+    border-bottom: 2px solid #797979;
+}
+
+.tab_box {
+    border-bottom: 1px solid #797979;
+}
+
+.content_box .content {
+    padding: 1.5rem;
+    display: none;
+}
+
+.content_box .content.active {
+    display: block;
+}
+
+.content_box .content li {
+    font-size: 1.2rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.2rem;
+}
+
+.booknow-aside {
+    line-height: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--small);
+    padding: 2rem;
+}
+
+.booknow-aside p {
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+    font-weight: 600;
+}
+
+.booknow-aside .date {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.booknow-aside .date span:first-child {
+    margin-right: 0.5rem;
+}
+
+.booknow-aside .date .checkin,
+.booknow-aside .date .checkout {
+    letter-spacing: 0.2rem;
+    padding: 1rem;
+}
+
+.booknow-aside .people {
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.booknow-aside .people span,
+.booknow-aside .price span {
+    margin-right: 1.5rem;
+}
+
+.booknow-aside .people select {
+    font-size: 1.2rem;
+    height: 3rem;
+    width: 15rem;
+    outline: 0;
+    font-family: Noto sans Tc;
+    text-align: center;
+    letter-spacing: 0.2rem;
+}
+
+.booknow-aside .price {
+    display: flex;
+    padding: 1rem 0 2rem 0;
+}
+
+/* grid blbum */
+.section.album .container {
+    padding: 5rem 10rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+}
+
+.section.album .item {
+    background-color: #f00;
+    aspect-ratio: 1/1;
+}
+
+.section.album .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+    /* display: none; */
+}
+
+.section.album .item:nth-child(1),
+.section.album .item:nth-child(5) {
+    grid-column: span 2;
+    /* aspect-ratio: calc(100px + 10px)/ 100px; */
+    aspect-ratio: 2 / 1;
+}
+
+@media (max-width: 768px) {
+    .section.album .container {
+        grid-template-columns: repeat(2, 1fr);
+        /* 將網格改為2欄 */
+    }
+
+    .section.album .item:nth-child(1),
+    .section.album .item:nth-child(5) {
+        grid-column: span 1;
+        /* 讓所有項目只佔一欄 */
+    }
+
+    .section.album .container {
+        padding: 2rem;
+        /* 減少內邊距 */
+        gap: 0.25rem;
+        /* 縮小間距 */
+    }
+
+    .section.album .item {
+        aspect-ratio: 4/3;
+        /* 將項目調整為4:3比例 */
+    }
+
+    .section.album .item:nth-child(n+5) {
+        display: none;
+        /* 隱藏第5個項目之後的項目 */
+    }
+}

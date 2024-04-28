@@ -22,17 +22,19 @@
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/adc8adae0d.js" crossorigin="anonymous"></script>
     <!-- logo -->
-    <link rel="icon" href="images/logo green.png" type="image/x-icon">
+    <link rel="icon" href="images/logo-green.png" type="image/x-icon">
+    <!-- js -->
+    <script src="index.js"></script>
 </head>
 
 <body>
-    <header>
+    <header id="nav">
         <div class="container">
             <input type="checkbox" name="" id="main-switch">
             <header class="main-header">
                 <div class="logo">
                     <a href="./index.html">
-                        <img src="./images/logo.png">
+                        <img src="./images/logo.png" id="logo">
                     </a>
                 </div>
                 <label class="hb" for="main-switch">
@@ -40,12 +42,12 @@
                     <span></span>
                     <span></span>
                 </label>
-                <nav class="main-nav">
-                    <a href="./aboutus.html">關於我們</a>
-                    <a href="./new.html">最新消息</a>
-                    <a href="./introroom.html">房型介紹</a>
-                    <a href="#">預約訂房</a>
-                    <a href="./contact.html">聯絡我們</a>
+                <nav class="main-nav" id="main-nav">
+                    <a class="navLink" href="./aboutus.html">關於我們</a>
+                    <a class="navLink" href="./new.html">最新消息</a>
+                    <a class="navLink" href="./introroom.html">房型介紹</a>
+                    <a class="navLink" href="./booknow.html">預約訂房</a>
+                    <a class="navLink" href="./contact.html">聯絡我們</a>
                 </nav>
             </header>
         </div>
