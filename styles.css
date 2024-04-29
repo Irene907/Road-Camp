@@ -10,6 +10,8 @@ html {
     }
 }
 
+
+
 .container {
     max-width: 1200px;
     margin: auto;
@@ -21,7 +23,7 @@ h1 {
 
 h2 {
     font-size: 3.5rem;
-    margin: 1.5rem 0;
+    /* margin: 1rem 0; */
     letter-spacing: 0.5rem;
     padding-top: 6rem;
     font-weight: bold;
@@ -74,6 +76,10 @@ h6 {
 
     h6 {
         font-size: 1.4rem;
+    }
+
+    body .section {
+        padding: 2.5rem 0;
     }
 }
 
@@ -159,7 +165,7 @@ header {
 .main-header .hb span {
     width: 80%;
     height: 3px;
-    background-color: var(--mid);
+    background-color: var(--big);
 }
 
 @media screen and (max-width:768px) {
@@ -760,9 +766,10 @@ header {
     justify-content: space-between;
 }
 
-.section.map .container .map-icon i {
+.section.map .container .map-icon span {
     font-size: 5rem;
     margin-bottom: 3rem;
+    font-weight: 500;
 }
 
 .section.map .container .map-icon p {
@@ -774,40 +781,64 @@ header {
 .section.map .container .map-icon .mail,
 .section.map .container .map-icon .loca {
     display: flex;
-    flex: 1 0 300px;
     flex-direction: column;
     align-items: center;
+    width: 20rem;
+    text-align: center;
+    /* padding: 1rem 0; */
 }
 
 @media (max-width:768px) {
 
-    .section.map .container .map-icon .phone,
-    .section.map .container .map-icon .mail,
-    .section.map .container .map-icon .loca {
+    .section.map .container .map-icon {
+        margin-top: 0.5rem;
         display: flex;
-        flex: 1 0 100 px;
         flex-direction: column;
         align-items: center;
     }
 
-    .section.map .container .googlemap iframe {
+    .section.map .container .map-icon span {
+        font-size: 5rem;
+        font-weight: 600;
+    }
+
+    .section.map .container .map-icon p {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .section.map .container .googlemap {
+        width: 100%;
+        aspect-ratio: 16/9;
         margin: auto;
-        width: 5rem;
-        height: 5rem;
-        border: 0;
+    }
+
+    .section.map .container .googlemap iframe {
+        width: 100%;
+        height: 100%;
+        display: block;
+        padding: 3rem 0;
+    }
+
+    .section.map .container .map-icon .phone,
+    .section.map .container .map-icon .mail,
+    .section.map .container .map-icon .loca {
+        padding: 1.5rem 0;
     }
 }
 
+
 .section.map .container .googlemap {
-    text-align: center;
-    margin-top: 8rem;
+    width: 80%;
+    aspect-ratio: 16/9;
+    margin: auto;
 }
 
 .section.map .container .googlemap iframe {
-    margin: auto;
-    width: 90rem;
-    height: 35rem;
-    border: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 5rem 0;
 }
 
 /* 表單 */
@@ -829,19 +860,22 @@ header {
 
 .section.contact form input:nth-child(1),
 .section.contact form input:nth-child(2) {
-    width: 35rem;
-    height: 4rem;
+    width: 25%;
+    padding: 1rem;
 }
 
 .section.contact form .line2 input,
 .section.contact form textarea {
     resize: none;
-    width: 70rem;
+    width: 52%;
+    padding: 1rem;
 }
 
 .section.contact form textarea {
     height: 14rem;
 }
+
+
 
 /* 預約訂房 */
 
@@ -874,7 +908,7 @@ header {
 
 .content_box .content {
     padding: 1.5rem;
-    display: none;
+    /* display: none; */
 }
 
 .content_box .content.active {
@@ -917,18 +951,18 @@ header {
     padding: 1rem;
 }
 
-.booknow-aside .people {
+.booknow-aside .room {
     padding: 1rem 0;
     display: flex;
     align-items: center;
 }
 
-.booknow-aside .people span,
+.booknow-aside .room span,
 .booknow-aside .price span {
     margin-right: 1.5rem;
 }
 
-.booknow-aside .people select {
+.booknow-aside .room select {
     font-size: 1.2rem;
     height: 3rem;
     width: 15rem;
@@ -941,62 +975,4 @@ header {
 .booknow-aside .price {
     display: flex;
     padding: 1rem 0 2rem 0;
-}
-
-/* grid blbum */
-.section.album .container {
-    padding: 5rem 10rem;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0.5rem;
-}
-
-.section.album .item {
-    background-color: #f00;
-    aspect-ratio: 1/1;
-}
-
-.section.album .item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    vertical-align: bottom;
-    /* display: none; */
-}
-
-.section.album .item:nth-child(1),
-.section.album .item:nth-child(5) {
-    grid-column: span 2;
-    /* aspect-ratio: calc(100px + 10px)/ 100px; */
-    aspect-ratio: 2 / 1;
-}
-
-@media (max-width: 768px) {
-    .section.album .container {
-        grid-template-columns: repeat(2, 1fr);
-        /* 將網格改為2欄 */
-    }
-
-    .section.album .item:nth-child(1),
-    .section.album .item:nth-child(5) {
-        grid-column: span 1;
-        /* 讓所有項目只佔一欄 */
-    }
-
-    .section.album .container {
-        padding: 2rem;
-        /* 減少內邊距 */
-        gap: 0.25rem;
-        /* 縮小間距 */
-    }
-
-    .section.album .item {
-        aspect-ratio: 4/3;
-        /* 將項目調整為4:3比例 */
-    }
-
-    .section.album .item:nth-child(n+5) {
-        display: none;
-        /* 隱藏第5個項目之後的項目 */
-    }
 }
