@@ -10,8 +10,6 @@ html {
     }
 }
 
-
-
 .container {
     max-width: 1200px;
     margin: auto;
@@ -165,7 +163,7 @@ header {
 .main-header .hb span {
     width: 80%;
     height: 3px;
-    background-color: var(--big);
+    background-color: var(--mid);
 }
 
 @media screen and (max-width:768px) {
@@ -173,14 +171,18 @@ header {
         position: absolute;
         top: 100%;
         right: 0;
-        width: 50%;
-
+        width: 100%;
     }
 
     .main-header .main-nav a {
         text-align: center;
+        width: 100%;
     }
+
+
+
 }
+
 
 @media screen and (min-width:768px) {
     .main-header .main-nav {
@@ -192,11 +194,13 @@ header {
     display: none;
     text-decoration: none;
     background-color: var(--hover);
-    padding: 1rem;
-    font-size: 1.4rem;
+    padding: 1.5rem;
+    font-size: 1.6rem;
     color: var(--mid);
     font-weight: bold;
     letter-spacing: 0.2rem;
+    text-align: center;
+
 }
 
 @media screen and (min-width:768px) {
@@ -842,38 +846,64 @@ header {
 }
 
 /* 表單 */
+
+.section.contact .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .section.contact form input,
 .section.contact form textarea {
     background-color: rgba(242, 242, 242, 1);
     border-color: #c7c7c7;
     border: 1px solid;
-    transform: translateZ(0);
     color: #000000;
     font-size: 1.4rem;
-    line-height: 20px;
+    line-height: 2rem;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 1px;
     margin-bottom: 2rem;
     outline: none;
-}
-
-.section.contact form input:nth-child(1),
-.section.contact form input:nth-child(2) {
-    width: 25%;
     padding: 1rem;
-}
-
-.section.contact form .line2 input,
-.section.contact form textarea {
-    resize: none;
-    width: 52%;
-    padding: 1rem;
+    width: 100%;
 }
 
 .section.contact form textarea {
+    resize: none;
     height: 14rem;
 }
+
+.section.contact .line1,
+.section.contact .line2,
+.section.contact .line3 {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.section.contact .line1 input {
+    flex: 1;
+}
+
+.section.contact .line2 input,
+.section.contact .line3 textarea {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+
+    .section.contact .line1,
+    .section.contact .line2,
+    .section.contact .line3 {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
 
 
 
@@ -889,13 +919,18 @@ header {
 
 .booknow-main .tab_box .tab_btn {
     font-size: 1.4rem;
-    font-weight: 600;
     letter-spacing: 0.2rem;
+    font-family: NOTO SANS TC;
     color: #797979;
     background: none;
     border: none;
     padding: 1rem;
     cursor: pointer;
+    font-weight: normal;
+}
+
+.booknow-main .tab_box .tab_btn.highlight {
+    font-weight: bold;
 }
 
 .booknow-main .tab_box .tab_btn:hover {
@@ -908,7 +943,8 @@ header {
 
 .content_box .content {
     padding: 1.5rem;
-    /* display: none; */
+    display: none;
+    transition: .5s;
 }
 
 .content_box .content.active {
@@ -925,8 +961,10 @@ header {
     line-height: 2.4rem;
     display: flex;
     flex-direction: column;
+    gap: 20px;
     border: 1px solid var(--small);
     padding: 2rem;
+    margin-bottom: 7rem;
 }
 
 .booknow-aside p {
@@ -974,5 +1012,4 @@ header {
 
 .booknow-aside .price {
     display: flex;
-    padding: 1rem 0 2rem 0;
 }
