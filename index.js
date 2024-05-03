@@ -20,20 +20,6 @@ window.addEventListener('load', function (){
     }
 })
 
-window.addEventListener('load', function() {
-    const hb = document.getElementById('hb');
-
-    function changeHbColor() {
-        if (window.pageYOffset > 10) {
-        hb.style.color = "#222222";
-    } else {
-        hb.style.color = "white";
-    }
-    }
-
-    window.addEventListener('scroll', changeHbColor);
-    changeHbColor(); // 初始化顏色
-});
 
 
 // header
@@ -59,11 +45,6 @@ function navAnimate(){
         logo.src="./images/logo.png";
     }
 
-    if (scrollY>10){
-        hb.style.color="#222222";
-    }else {
-        hb.style.color="white";
-    }
 
 }
 

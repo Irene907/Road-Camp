@@ -131,7 +131,7 @@ img {
 header {
     position: fixed;
     width: 100%;
-    z-index: 1;
+    z-index: 10;
 }
 
 .main-header {
@@ -163,7 +163,7 @@ header {
 .main-header .hb span {
     width: 80%;
     height: 3px;
-    background-color: var(--mid);
+    background-color: var(--hover);
 }
 
 @media screen and (max-width:768px) {
@@ -252,7 +252,7 @@ header {
     }
 } */
 
-/* banner-test */
+/* banner*/
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
@@ -298,6 +298,7 @@ header {
         flex-wrap: wrap;
         justify-content: center;
     }
+
 }
 
 .aboutus-left {
@@ -365,6 +366,18 @@ header {
 
 .room-card .room-txt h4 {
     position: relative;
+    font-weight: 500;
+}
+
+@media (max-width:768px) {
+
+    .room-card .room-txt h4 {
+        font-size: 1.55rem;
+    }
+
+    .section.room .container p {
+        font-size: 1.4rem;
+    }
 }
 
 .room-card .room-txt h4::before {
@@ -453,9 +466,15 @@ header {
 
 .fac-circles .circle p {
     letter-spacing: 0.3rem;
-    font-weight: bold;
+    font-weight: 500;
     padding: 1rem 0;
     font-size: 1.6rem;
+}
+
+@media (max-width:768px) {
+    .fac-circles .circle p {
+        font-size: 1.55rem;
+    }
 }
 
 .fac-circles .circle img {
@@ -463,6 +482,7 @@ header {
     transition: all 0.1s ease-in;
     padding: 0.3rem;
 }
+
 
 .fac-circles .circle img:hover {
     border: 3px solid var(--hover);
@@ -604,7 +624,63 @@ header {
     .abus-downtxt {
         display: flex;
         flex-wrap: wrap;
+        padding: 3rem 3rem 0 3rem;
+    }
+}
 
+/* 相簿 */
+
+.section.albums {
+    /* padding: 0 10rem; */
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.section.albums .album-carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+
+}
+
+.section.albums .album {
+    flex: 0 0 33.33%;
+
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.section.albums .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    cursor: pointer;
+    color: #000;
+    z-index: 1;
+    color: var(--mid);
+    font-weight: bold;
+}
+
+.section.albums .left-arrow {
+    left: 15px;
+}
+
+.section.albums .right-arrow {
+    right: 15px;
+}
+
+@media (max-width: 768px) {
+    .section.albums .album {
+        flex-basis: 50%;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 574px) {
+    .section.albums .album {
+        flex-basis: 100%;
+        margin-right: 0;
     }
 }
 
@@ -622,6 +698,28 @@ header {
     margin-top: 5rem;
     padding: 0 11rem;
 }
+
+@media (max-width:574px) {
+
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+@media (max-width:768px) {
+    .section.new .row {
+        margin-top: 3rem;
+        padding: 0 5rem;
+    }
+
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+
 
 .section.new .row .card {
     margin-bottom: 10rem;
@@ -657,6 +755,26 @@ header {
     margin: 1rem 0;
 }
 
+.section.new .pagination {
+    text-align: center;
+}
+
+.section.new .pagination a {
+    text-decoration: none;
+    padding: 0.5rem 0.8rem;
+    color: var(--big);
+    font-size: 1.4rem;
+}
+
+.section.new .pagination a.active {
+    background-color: var(--hover);
+    color: white;
+}
+
+.section.new .pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+
 /* 房型介紹 */
 .section.introroom .arrow {
     text-align: center;
@@ -679,6 +797,11 @@ header {
         flex-direction: column;
         align-items: center;
     }
+
+    .section.roomlist {
+        padding: 0 4rem;
+    }
+
 }
 
 .room-item .introroom-pic {
@@ -915,6 +1038,14 @@ header {
 
 .booknow-wrap {
     display: flex;
+}
+
+@media (max-width:768px) {
+    .booknow-wrap {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .booknow-main .tab_box .tab_btn {
