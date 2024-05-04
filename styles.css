@@ -23,7 +23,7 @@ h2 {
     font-size: 3.5rem;
     /* margin: 1rem 0; */
     letter-spacing: 0.5rem;
-    padding-top: 6rem;
+    padding-top: 5rem;
     font-weight: bold;
     text-align: center;
 }
@@ -128,6 +128,14 @@ img {
 }
 
 /* header */
+#nav {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#nav .main-header .main-nav a {
+    color: var(--mid);
+}
+
 header {
     position: fixed;
     width: 100%;
@@ -158,6 +166,7 @@ header {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+
 }
 
 .main-header .hb span {
@@ -179,8 +188,38 @@ header {
         width: 100%;
     }
 
+    #main-switch:checked~.main-header .hb span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
 
+    #main-switch:checked~.main-header .hb span:nth-child(2) {
+        opacity: 0;
+    }
 
+    #main-switch:checked~.main-header .hb span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .main-header .main-nav {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+    }
+
+    #main-switch:checked~.main-header .main-nav {
+        max-height: 500px;
+    }
+
+    .main-header .main-nav a {
+        transform: translateY(-20px);
+        opacity: 0;
+        transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    }
+
+    #main-switch:checked~.main-header .main-nav a {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 
@@ -233,24 +272,6 @@ header {
     }
 }
 
-/* banner*/
-/* .section-banner {
-    height: 100vh;
-    overflow: hidden;
-}
-
-.section-banner video {
-    width: 100%;
-    aspect-ratio: 16/9;
-    position: relative;
-    z-index: -1;
-}
-
-@media (max-width: 768px) {
-    .section-banner video {
-        width: auto;
-    }
-} */
 
 /* banner*/
 .video-container {
@@ -456,19 +477,34 @@ header {
 }
 
 .fac-circles .circle {
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem;
-    /* flex: 0 1 300px; */
+    padding: 1.5rem;
 }
 
-.fac-circles .circle p {
+
+.fac-circles .circle h3 {
     letter-spacing: 0.3rem;
     font-weight: 500;
     padding: 1rem 0;
     font-size: 1.6rem;
+}
+
+.fac-circles .circle p {
+    width: 27rem;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: var(--mid);
+    padding: 1.5rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    opacity: 0;
+    /* 初始時設為不可見 */
+    transform: translateY(100%);
+    /* 初始位置向下平移 100% */
+    transition: all 0.3s ease-in-out;
 }
 
 @media (max-width:768px) {
@@ -478,15 +514,36 @@ header {
 }
 
 .fac-circles .circle img {
-    border-radius: 50%;
+    width: 100%;
+    height: auto;
     transition: all 0.1s ease-in;
     padding: 0.3rem;
+    cursor: pointer;
 }
 
 
-.fac-circles .circle img:hover {
-    border: 3px solid var(--hover);
+.fac-circles .circle:hover p {
+    opacity: 1;
+    transform: translateY(0);
+
 }
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fac-circles .circle:hover p {
+    animation: slideIn 0.3s ease-in-out;
+}
+
 
 
 /* comment */
@@ -499,10 +556,49 @@ header {
     padding: 0 5rem;
 }
 
-.comment-list {
+.section.comment .comment-list {
     display: flex;
     overflow: hidden;
+    width: 100%;
 }
+
+.section.comment .comment-item {
+    display: flex;
+    animation: marquee 15s linear infinite;
+    border: 1px solid var(--big);
+
+    width: max-content;
+    margin-right: 1rem;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.section.comment .comment-item .comment-txt {
+    width: 40rem;
+    line-height: 2rem;
+    padding: 1rem 0 1rem 1rem;
+    box-sizing: border-box;
+}
+
+.section.comment .comment-item .comment-pic {
+    width: 70px;
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
 
 /* footer */
 .section-footer {
