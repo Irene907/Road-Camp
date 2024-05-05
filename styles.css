@@ -501,9 +501,7 @@ header {
     background-color: rgba(0, 0, 0, 0.3);
     font-weight: 500;
     opacity: 0;
-    /* 初始時設為不可見 */
     transform: translateY(100%);
-    /* 初始位置向下平移 100% */
     transition: all 0.3s ease-in-out;
 }
 
@@ -525,7 +523,6 @@ header {
 .fac-circles .circle:hover p {
     opacity: 1;
     transform: translateY(0);
-
 }
 
 @keyframes slideIn {
@@ -544,6 +541,25 @@ header {
     animation: slideIn 0.3s ease-in-out;
 }
 
+@media (max-width: 768px) {
+    .fac-circles .circle p {
+        opacity: 1;
+        transform: translateY(0);
+        animation: none;
+    }
+
+    .fac-circles .circle p {
+        width: 27rem;
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+        color: var(--mid);
+        padding: 1.5rem;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.3);
+        font-weight: 500;
+    }
+}
+
 
 
 /* comment */
@@ -553,50 +569,99 @@ header {
 }
 
 .section.comment .container {
-    padding: 0 5rem;
+    padding: 0 1rem;
+    overflow: hidden;
+    position: relative;
 }
 
 .section.comment .comment-list {
     display: flex;
-    overflow: hidden;
-    width: 100%;
+    width: max-content;
+    /* animation: marquee 20s linear infinite; */
 }
 
 .section.comment .comment-item {
     display: flex;
-    animation: marquee 15s linear infinite;
     border: 1px solid var(--big);
-
     width: max-content;
     margin-right: 1rem;
+    flex-shrink: 0;
+    animation: marquee 20s linear infinite;
 }
 
 @keyframes marquee {
+
     0% {
-        transform: translateX(100%);
+        transform: translateX(0);
     }
 
     100% {
-        transform: translateX(-100%);
+        transform: translateX(calc(-100% * var(--comment-count) - 1rem * (var(--comment-count) - 1)));
     }
 }
 
 .section.comment .comment-item .comment-txt {
     width: 40rem;
     line-height: 2rem;
-    padding: 1rem 0 1rem 1rem;
+    padding: 0.5rem;
     box-sizing: border-box;
+    font-size: 1.2rem;
 }
 
 .section.comment .comment-item .comment-pic {
-    width: 70px;
-    margin-right: 1rem;
+    width: 50px;
+    margin-right: 0.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+.section.comment .comment-item .comment-pic img {
+    width: 100%;
+    height: auto;
+}
+
+.section.comment .comment-item .comment-pic p {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .section.comment .container {
+        overflow: hidden;
+    }
+
+    .section.comment .comment-list {
+        animation: none;
+        padding-left: 100vw;
+    }
+
+    .section.comment .comment-item {
+        animation: marquee-mobile 20s linear infinite;
+    }
+
+    @keyframes marquee-mobile {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-300vw - 3rem * var(--comment-count)));
+        }
+    }
+
+    .section.comment .comment-item .comment-txt {
+        width: 80vw;
+        /* 手機版文字寬度調整為 80vw */
+        padding: 0.5rem;
+    }
+
+    .section.comment .comment-item .comment-pic {
+        width: 40px;
+        margin-right: 0.3rem;
+    }
+}
 
 
 
@@ -886,6 +951,16 @@ header {
     padding: 5rem 0;
 }
 
+@media (min-width:768px) {
+
+    .room-item .flexslider,
+    .room-item .introroom-txt {
+        width: 50%;
+        box-sizing: border-box;
+    }
+}
+
+
 @media (max-width:768px) {
     .section.roomlist .room-item {
         padding: 5rem 0;
@@ -900,12 +975,12 @@ header {
 
 }
 
-.room-item .introroom-pic {
-    display: flex;
-    justify-content: center;
-    width: 50%;
-    overflow: hidden;
+/* slider */
+.section.roomlist .room-item .flexslider {
+    border: none;
+    background: none;
 }
+
 
 .room-item .introroom-txt {
     width: 50%;
@@ -1214,6 +1289,19 @@ header {
 .booknow-aside .date .checkout {
     letter-spacing: 0.2rem;
     padding: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.booknow-aside .date .checkin input,
+.booknow-aside .date .checkout input {
+    font-size: 1.4rem;
+    height: 2.5rem;
+    width: 15rem;
+    outline: 0;
+    font-family: Noto sans Tc;
+    text-align: center;
+
 }
 
 .booknow-aside .room {

@@ -26,6 +26,20 @@
     <script src="https://kit.fontawesome.com/adc8adae0d.js" crossorigin="anonymous"></script>
     <!-- logo -->
     <link rel="icon" href="images/logo-green.png" type="image/x-icon">
+    <!-- 輪播圖 -->
+    <link rel="stylesheet" href="./jquery.flexslider-min.js">
+    <link rel="stylesheet" href="./jquery.flexslider.js">
+    <!-- <link rel="stylesheet" href="./flexslider.css"> -->
+    <!-- Place somewhere in the <head> of your document -->
+    <link rel="stylesheet" href="flexslider.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="jquery.flexslider.js"></script>
+    <!-- Place in the <head>, after the three links -->
+    <script type="text/javascript" charset="utf-8">
+        $(window).load(function () {
+            $('.flexslider').flexslider();
+        });
+    </script>
     <!-- js -->
     <script src="index.js"></script>
 </head>
@@ -73,10 +87,18 @@
         <div class="container">
             <!-- 露營車 -->
             <div class="room-item">
-                <div class="introroom-pic">
-                    <img src="./images/car-1.png" alt="">
-                    <img src="./images/car-2.png" alt="">
-                    <img src="./images/car-3.png" alt="">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li>
+                            <img src="./images/car-1.png" />
+                        </li>
+                        <li>
+                            <img src="./images/car-2.png" />
+                        </li>
+                        <li>
+                            <img src="./images/car-3.png" />
+                        </li>
+                    </ul>
                 </div>
                 <div class="introroom-txt">
                     <div class="title">
@@ -108,10 +130,18 @@
             </div>
             <!-- 帳篷 -->
             <div class="room-item">
-                <div class="introroom-pic">
-                    <img src="./images/room-1.png" alt="">
-                    <img src="./images/room-2.png" alt="">
-                    <img src="./images/room-3.png" alt="">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li>
+                            <img src="./images/room-1.png" />
+                        </li>
+                        <li>
+                            <img src="./images/room-2.png" />
+                        </li>
+                        <li>
+                            <img src="./images/room-3.png" />
+                        </li>
+                    </ul>
                 </div>
                 <div class="introroom-txt">
                     <div class="title">
