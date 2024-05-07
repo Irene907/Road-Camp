@@ -24,6 +24,9 @@
         rel="stylesheet">
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/adc8adae0d.js" crossorigin="anonymous"></script>
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- logo -->
     <link rel="icon" href="images/logo-green.png" type="image/x-icon">
     <!-- js -->
@@ -71,7 +74,7 @@
                 <p>在茂密的森林裡，有一處供懶人遠離煩囂的天堂。<br>我們的民宿專為那些渴望逃離城市喧囂、放鬆身心的人而設。<br>在這裡，你可以遠離工作的壓力，沉浸在大自然的懷抱中。<br>讓我們為您提供一個舒適、溫馨的庇護所，讓您盡情享受森林的靜謐與美麗。<br>無論是漫步於森林小徑，還是在營火旁聆聽大自然的聲音，這裡都將是您放鬆身心、重新充電的理想去處。
                 </p>
             </div>
-            <div class="abus-pic">
+            <div class="abus-pic" data-aos="fade-up">
                 <img src="./images/abus.jpg" alt="">
             </div>
             <div class="abus-downtxt">
@@ -138,7 +141,11 @@
         </div>
     </section>
 
-
+    <script>
+        AOS.init({
+            duration: 3000,
+        });
+    </script>
 
 </body>
 

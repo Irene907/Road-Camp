@@ -24,6 +24,9 @@
         rel="stylesheet">
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/adc8adae0d.js" crossorigin="anonymous"></script>
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- logo -->
     <link rel="icon" href="images/logo-green.png" type="image/x-icon">
     <!-- js -->
@@ -69,7 +72,7 @@
             </div>
             <div class="row">
                 <div class="col-12 col-md-4">
-                    <div class="card">
+                    <div class="card" data-aos="fade-right">
                         <div class="pic">
                             <img src="./images/news-fix.png">
                         </div>
@@ -97,7 +100,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
-                    <div class="card">
+                    <div class="card" data-aos="fade-left">
                         <div class="pic">
                             <img src="./images/news-sakura.png">
                         </div>
@@ -111,7 +114,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
-                    <div class="card">
+                    <div class="card" data-aos="fade-right">
                         <div class="pic">
                             <img src="./images/news-labours.jpg">
                         </div>
@@ -139,7 +142,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
-                    <div class="card">
+                    <div class="card" data-aos="fade-left">
                         <div class="pic">
                             <img src="./images/news-weekend.png">
                         </div>
@@ -200,6 +203,12 @@
             </div>
         </div>
     </section>
+
+    <script>
+        AOS.init({
+            duration: 3000,
+        });
+    </script>
 </body>
 
 </html>

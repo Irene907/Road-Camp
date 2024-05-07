@@ -139,7 +139,7 @@ img {
 header {
     position: fixed;
     width: 100%;
-    z-index: 10;
+    z-index: 12;
 }
 
 .main-header {
@@ -319,7 +319,6 @@ header {
         flex-wrap: wrap;
         justify-content: center;
     }
-
 }
 
 .aboutus-left {
@@ -330,11 +329,39 @@ header {
 .aboutus-left-pic img {
     vertical-align: top;
     margin: 0 1.5rem;
+    animation: slide-left 5s infinite;
 }
 
+@keyframes slide-left {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
 
 .aboutus-right {
     text-align: center;
+}
+
+
+@media (max-width:768px) {
+    .aboutus-right {
+        text-align: center;
+        animation: slide-right 5s;
+    }
+
+    @keyframes slide-right {
+        from {
+            transform: translateX(100%);
+        }
+
+        to {
+            transform: translateX(0);
+        }
+    }
 }
 
 .aboutus-right-txt {
@@ -567,100 +594,6 @@ header {
     display: flex;
     justify-content: center;
 }
-
-/* .section.comment .container {
-    padding: 0 1rem;
-    overflow: hidden;
-    position: relative;
-}
-
-.section.comment .comment-list {
-    display: flex;
-    width: max-content;
-}
-
-.section.comment .comment-item {
-    display: flex;
-    border: 1px solid var(--big);
-    width: max-content;
-    margin-right: 1rem;
-    flex-shrink: 0;
-    animation: marquee 20s linear infinite;
-}
-
-@keyframes marquee {
-
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(calc(-100% * var(--comment-count) - 1rem * (var(--comment-count) - 1)));
-    }
-
-}
-
-.section.comment .comment-item .comment-txt {
-    width: 40rem;
-    line-height: 2rem;
-    padding: 0.5rem;
-    box-sizing: border-box;
-    font-size: 1.2rem;
-}
-
-.section.comment .comment-item .comment-pic {
-    width: 50px;
-    margin-right: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.section.comment .comment-item .comment-pic img {
-    width: 100%;
-    height: auto;
-}
-
-.section.comment .comment-item .comment-pic p {
-    margin-top: 0.5rem;
-    font-size: 1.2rem;
-}
-
-@media (max-width: 768px) {
-    .section.comment .container {
-        overflow: hidden;
-    }
-
-    .section.comment .comment-list {
-        animation: none;
-        padding-left: 100vw;
-    }
-
-    .section.comment .comment-item {
-        animation: marquee-mobile 20s linear infinite;
-    }
-
-    @keyframes marquee-mobile {
-        0% {
-            transform: translateX(0);
-        }
-
-        100% {
-            transform: translateX(calc(-300vw - 3rem * var(--comment-count)));
-        }
-    }
-
-    .section.comment .comment-item .comment-txt {
-        width: 80vw;
-        padding: 0.5rem;
-    }
-
-    .section.comment .comment-item .comment-pic {
-        width: 40px;
-        margin-right: 0.3rem;
-    }
-} */
 
 .section.comment .container {
     padding: 0 1rem;
@@ -923,9 +856,9 @@ header {
 
 @media (max-width:574px) {
 
-    .row {
-        margin-left: 0;
-        margin-right: 0;
+    .section.new .row {
+        margin-left: 15px;
+        margin-right: 15px;
     }
 }
 
@@ -933,11 +866,8 @@ header {
     .section.new .row {
         margin-top: 3rem;
         padding: 0 5rem;
-    }
-
-    .row {
-        margin-left: 0;
-        margin-right: 0;
+        margin-left: 15px;
+        margin-right: 15px;
     }
 }
 
@@ -1200,6 +1130,8 @@ header {
     padding: 5rem 0;
 }
 
+
+
 /* 表單 */
 
 .section.contact .container {
@@ -1259,7 +1191,20 @@ header {
     }
 }
 
+.section.contact.form {
+    background-image: url(./images/form-bg.png);
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: left 0% bottom 0%;
+    ;
+}
 
+@media (max-width: 768px) {
+    .section.contact.form {
+        background-image: none;
+
+    }
+}
 
 
 /* 預約訂房 */

@@ -24,6 +24,9 @@
         rel="stylesheet">
     <!-- font awesome -->
     <script src="https://kit.fontawesome.com/adc8adae0d.js" crossorigin="anonymous"></script>
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- logo -->
     <link rel="icon" href="images/logo-green.png" type="image/x-icon">
     <!-- js -->
@@ -114,7 +117,7 @@
             </div>
             <p>兩種選擇</p>
             <div class="room-list">
-                <div class="room-card">
+                <div class="room-card" data-aos="zoom-in-up">
                     <a href="./introroom.html">
                         <div class="room-pic">
                             <img src="./images/index-car.png">
@@ -127,7 +130,7 @@
                         <h4>露營車</h4>
                     </div>
                 </div>
-                <div class="room-card">
+                <div class="room-card" data-aos="zoom-in-up">
                     <a href="./introroom.html">
                         <div class="room-pic">
                             <img src="./images/index-tent.png">
@@ -153,21 +156,21 @@
             </div>
             <div class="fac-circles">
                 <div class="circle">
-                    <div class="circle-pic">
+                    <div class="circle-pic" data-aos="zoom-in-up">
                         <img src="./images/fire.png" alt="">
                     </div>
                     <h3>營火區</h3>
                     <p>在夜幕降臨時，營火點亮了夜空，營造出溫馨氛圍。與朋友和家人圍坐在營火旁，品嚐烤棉花糖，聆聽篝火故事，共度美好時光。</p>
                 </div>
                 <div class="circle">
-                    <div class="circle-pic">
+                    <div class="circle-pic" data-aos="zoom-in-up">
                         <img src="./images/cinema.png" alt="">
                     </div>
                     <h3>露天電影區</h3>
                     <p>在涼爽的夜晚，坐在舒適的椅子上，欣賞星空下的電影，絕對是一種奢侈的享受。<br>讓您在露營之旅，體驗電影院般的感受。</p>
                 </div>
                 <div class="circle">
-                    <div class="circle-pic">
+                    <div class="circle-pic" data-aos="zoom-in-up">
                         <img src="./images/bar.png" alt="">
                     </div>
                     <h3>酒吧區</h3>
@@ -270,6 +273,11 @@
         }
     </script>
     <script src="marquee.js"></script>
+    <script>
+        AOS.init({
+            duration: 3000,
+        });
+    </script>
 </body>
 
 </html>
