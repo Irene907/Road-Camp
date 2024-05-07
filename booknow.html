@@ -77,19 +77,19 @@
                             </span>
                             <div class="checkin">
                                 <span>入住日:</span>
-                                <span><input type="date"></span>
+                                <span><input type="date" id="checkinDate"></span>
                             </div>
                             <div class="checkout">
                                 <span>退房日:</span>
-                                <span><input type="date"></span>
+                                <span><input type="date" id="checkoutDate"></span>
                             </div>
                         </div>
-                        <p>幾天幾夜</p>
+                        <p id="stayDuration">幾天幾夜</p>
                         <div class="room">
                             <span class="material-symbols-outlined">
                                 camping
                             </span>
-                            <select name="room" id="">
+                            <select name="room" id="roomType">
                                 <option value="">選擇房型</option>
                                 <option value="car">露營車</option>
                                 <option value="tent">帳篷</option>
@@ -99,9 +99,9 @@
                             <span class="material-symbols-outlined">
                                 attach_money
                             </span>
-                            <p>總計:</p>
+                            <p id="totalCost">總計:</p>
                         </div>
-                        <button class="confirm">確認</button>
+                        <button class="confirm" id="confirmButton">確認</button>
                     </div>
                 </div>
                 <div class="col-xl-7">
@@ -146,6 +146,14 @@
             </div>
         </div>
     </section>
+    <div id="errorPopup" class="popup">
+        <div class="popup-content">
+            <i class="fa-regular fa-circle-check"></i>
+            <p id="errorText"></p>
+            <button id="confirm">確認</button>
+        </div>
+    </div>
+
     <!-- footer -->
     <section class="section-footer">
         <div class="container">
@@ -194,6 +202,8 @@
 
 
     </script>
+    <!-- 訂房 -->
+    <script src="book.js"></script>
 
 </body>
 

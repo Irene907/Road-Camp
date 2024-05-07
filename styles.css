@@ -568,7 +568,7 @@ header {
     justify-content: center;
 }
 
-.section.comment .container {
+/* .section.comment .container {
     padding: 0 1rem;
     overflow: hidden;
     position: relative;
@@ -577,7 +577,6 @@ header {
 .section.comment .comment-list {
     display: flex;
     width: max-content;
-    /* animation: marquee 20s linear infinite; */
 }
 
 .section.comment .comment-item {
@@ -598,6 +597,7 @@ header {
     100% {
         transform: translateX(calc(-100% * var(--comment-count) - 1rem * (var(--comment-count) - 1)));
     }
+
 }
 
 .section.comment .comment-item .comment-txt {
@@ -653,6 +653,64 @@ header {
 
     .section.comment .comment-item .comment-txt {
         width: 80vw;
+        padding: 0.5rem;
+    }
+
+    .section.comment .comment-item .comment-pic {
+        width: 40px;
+        margin-right: 0.3rem;
+    }
+} */
+
+.section.comment .container {
+    padding: 0 1rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.section.comment .comment-list {
+    display: flex;
+    width: max-content;
+}
+
+.section.comment .comment-item {
+    display: flex;
+    border: 1px solid var(--big);
+    width: max-content;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.section.comment .comment-item .comment-txt {
+    width: 40rem;
+    line-height: 2rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    font-size: 1.2rem;
+}
+
+.section.comment .comment-item .comment-pic {
+    width: 50px;
+    margin-right: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.section.comment .comment-item .comment-pic img {
+    width: 100%;
+    height: auto;
+}
+
+.section.comment .comment-item .comment-pic p {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .section.comment .comment-item .comment-txt {
+        width: 80vw;
         /* 手機版文字寬度調整為 80vw */
         padding: 0.5rem;
     }
@@ -662,6 +720,9 @@ header {
         margin-right: 0.3rem;
     }
 }
+
+
+
 
 
 
@@ -1327,4 +1388,66 @@ header {
 
 .booknow-aside .price {
     display: flex;
+}
+
+/* 登入頁面 */
+
+.section-login {
+    margin: auto;
+}
+
+.ac-icon::before {
+    content: "\f007";
+}
+
+.psw-icon::before {
+    content: "\f023";
+}
+
+/* Popup  */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.popup-content i {
+    font-size: 40px;
+    color: #24c21b;
+    margin-bottom: 10px;
+}
+
+.popup-content p {
+    font-size: 1.6rem;
+    margin: 30px 0;
+}
+
+/* .popup-content button {
+    padding: 10px 20px;
+    background-color: #ff5252;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+} */
+
+.popup-content button:hover {
+    background-color: var(--hover);
 }

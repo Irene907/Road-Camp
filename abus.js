@@ -69,23 +69,14 @@ const totalAlbums = albums.length;
 // 計算相冊寬度和每次切換數量
 function calculateDimensions() {
     albumWidth = document.querySelector('.album').offsetWidth;
-    numCardsPerSlide = window.innerWidth <= 768 ? 2 : 1;
+    numCardsPerSlide = 1; // 每次只切換一張相冊
 }
-
 // 更新輪播位置
 function updateCarousel() {
     const maxIndex = Math.floor((totalAlbums - 1) / numCardsPerSlide);
-    currentIndex = Math.min(currentIndex, maxIndex);
-
+    currentIndex = ((currentIndex % (maxIndex + 1)) + (maxIndex + 1)) % (maxIndex + 1);
     const translateXValue = -currentIndex * albumWidth * numCardsPerSlide;
-
     carousel.style.transition = 'transform 0.5s ease';
-
-    // 循環播放相冊
-    if (currentIndex > maxIndex) {
-        currentIndex = 0; // 回到第一張相冊
-    }
-
     carousel.style.transform = `translateX(${translateXValue}px)`;
 }
 
@@ -101,17 +92,17 @@ window.addEventListener('resize', () => {
 
 // 左箭頭點擊事件處理函式
 document.querySelector('.left-arrow').addEventListener('click', () => {
-    currentIndex -= numCardsPerSlide;
+    currentIndex -= 1;
     if (currentIndex < 0) {
-        const maxIndex = Math.floor((totalAlbums - 1) / numCardsPerSlide);
-        currentIndex = maxIndex * numCardsPerSlide;
+        const maxIndex = totalAlbums - 1;
+        currentIndex = maxIndex;
     }
     updateCarousel();
 });
 
 // 右箭頭點擊事件處理函式
 document.querySelector('.right-arrow').addEventListener('click', () => {
-    currentIndex += numCardsPerSlide;
+    currentIndex += 1;
     updateCarousel();
 });
 
