@@ -510,6 +510,12 @@ header {
     padding: 1.5rem;
 }
 
+@media (max-width:768px) {
+    .fac-circles .circle {
+        padding: 0;
+
+    }
+}
 
 .fac-circles .circle h3 {
     letter-spacing: 0.3rem;
@@ -672,6 +678,7 @@ header {
     flex-wrap: wrap;
 }
 
+
 .footer-logo img {
     width: 4rem;
     vertical-align: top;
@@ -712,6 +719,7 @@ header {
     font-size: 2rem;
     padding: 0.5rem
 }
+
 
 /* go to top */
 .totop {
