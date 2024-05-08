@@ -1,74 +1,74 @@
 
-let currentIndex = 0;
-let albumWidth;
-let numCardsPerSlide;
-let autoPlayInterval;
+// let currentIndex = 0;
+// let albumWidth;
+// let numCardsPerSlide;
+// let autoPlayInterval;
 
-const carousel = document.querySelector('.album-carousel');
-const albums = carousel.children;
-const totalAlbums = albums.length;
-
-
-function calculateDimensions() {
-    albumWidth = document.querySelector('.album').offsetWidth;
-    numCardsPerSlide = 1; 
-}
-
-function updateCarousel() {
-    const maxIndex = Math.floor((totalAlbums - 1) / numCardsPerSlide);
-    currentIndex = ((currentIndex % (maxIndex + 1)) + (maxIndex + 1)) % (maxIndex + 1);
-    const translateXValue = -currentIndex * albumWidth * numCardsPerSlide;
-    carousel.style.transition = 'transform 0.5s ease';
-    carousel.style.transform = `translateX(${translateXValue}px)`;
-}
+// const carousel = document.querySelector('.album-carousel');
+// const albums = carousel.children;
+// const totalAlbums = albums.length;
 
 
-calculateDimensions();
-updateCarousel();
+// function calculateDimensions() {
+//     albumWidth = document.querySelector('.album').offsetWidth;
+//     numCardsPerSlide = 1; 
+// }
+
+// function updateCarousel() {
+//     const maxIndex = Math.floor((totalAlbums - 1) / numCardsPerSlide);
+//     currentIndex = ((currentIndex % (maxIndex + 1)) + (maxIndex + 1)) % (maxIndex + 1);
+//     const translateXValue = -currentIndex * albumWidth * numCardsPerSlide;
+//     carousel.style.transition = 'transform 0.5s ease';
+//     carousel.style.transform = `translateX(${translateXValue}px)`;
+// }
 
 
-window.addEventListener('resize', () => {
-    calculateDimensions();
-    updateCarousel();
-});
+// calculateDimensions();
+// updateCarousel();
 
 
-document.querySelector('.left-arrow').addEventListener('click', () => {
-    currentIndex -= 1;
-    if (currentIndex < 0) {
-        const maxIndex = totalAlbums - 1;
-        currentIndex = maxIndex;
-    }
-    updateCarousel();
-});
+// window.addEventListener('resize', () => {
+//     calculateDimensions();
+//     updateCarousel();
+// });
 
 
-document.querySelector('.right-arrow').addEventListener('click', () => {
-    currentIndex += 1;
-    updateCarousel();
-});
+// document.querySelector('.left-arrow').addEventListener('click', () => {
+//     currentIndex -= 1;
+//     if (currentIndex < 0) {
+//         const maxIndex = totalAlbums - 1;
+//         currentIndex = maxIndex;
+//     }
+//     updateCarousel();
+// });
 
 
-function startAutoPlay() {
-    autoPlayInterval = setInterval(() => {
-        currentIndex += numCardsPerSlide;
-        updateCarousel();
-    }, 3000); 
-}
+// document.querySelector('.right-arrow').addEventListener('click', () => {
+//     currentIndex += 1;
+//     updateCarousel();
+// });
 
 
-function stopAutoPlay() {
-    clearInterval(autoPlayInterval);
-}
+// function startAutoPlay() {
+//     autoPlayInterval = setInterval(() => {
+//         currentIndex += numCardsPerSlide;
+//         updateCarousel();
+//     }, 3000); 
+// }
 
 
-startAutoPlay();
+// function stopAutoPlay() {
+//     clearInterval(autoPlayInterval);
+// }
 
 
-carousel.addEventListener('mouseenter', () => {
-    stopAutoPlay();
-});
+// startAutoPlay();
 
-carousel.addEventListener('mouseleave', () => {
-    startAutoPlay();
-});
+
+// carousel.addEventListener('mouseenter', () => {
+//     stopAutoPlay();
+// });
+
+// carousel.addEventListener('mouseleave', () => {
+//     startAutoPlay();
+// });

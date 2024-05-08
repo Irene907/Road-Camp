@@ -1,5 +1,4 @@
 
-
 window.onload = function() {
   
   const commentItems = document.querySelectorAll('.comment-item');
